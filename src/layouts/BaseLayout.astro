@@ -1,0 +1,171 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/assets/hero.jpg',
+  canonical,
+} = Astro.props;
+
+const isProduction = import.meta.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production';
+const canonicalURL = canonical ? new URL(canonical, Astro.site) : new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site).href;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "InternetServiceProvider"],
+      "@id": "https://www.infinilinkbroadband.com/#business",
+      "name": "Infinilink Broadband",
+      "url": "https://www.infinilinkbroadband.com",
+      "logo": "https://www.infinilinkbroadband.com/favicon.svg",
+      "image": "https://www.infinilinkbroadband.com/assets/hero.jpg",
+      "description": "Locally owned and operated Wireless Internet Service Provider (WISP) delivering truly unlimited, high-speed fixed wireless internet to homes and businesses across Wise County, Texas.",
+      "telephone": "+1-940-437-0550",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Decatur",
+        "addressRegion": "TX",
+        "postalCode": "76234",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.2343",
+        "longitude": "-97.5864"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Decatur" },
+        { "@type": "City", "name": "Runaway Bay" },
+        { "@type": "City", "name": "Bridgeport" },
+        { "@type": "City", "name": "Alvord" },
+        { "@type": "City", "name": "Chico" },
+        { "@type": "City", "name": "Paradise" },
+        { "@type": "City", "name": "Boyd" },
+        { "@type": "AdministrativeArea", "name": "Wise County" },
+        { "@type": "State", "name": "Texas" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.infinilinkbroadband.com/#website",
+      "url": "https://www.infinilinkbroadband.com",
+      "name": "Infinilink Broadband",
+      "publisher": {
+        "@id": "https://www.infinilinkbroadband.com/#business"
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta -->
+    <title>{title} | Infinilink Broadband Wise County TX</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Environment-Aware GSC Safeguards -->
+    {isProduction ? (
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    ) : (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Infinilink Broadband" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImageURL} />
+
+    <!-- Local Entity Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <slot name="schema" />
+
+    <!-- Google Tag (gtag.js) for Google Ads & Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-817539024"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-817539024', { 'allow_enhanced_conversions': true });
+      gtag('config', 'G-J51Y85KVRZ');
+
+      // Global conversion tracking helper
+      window.trackInfinilinkConversion = function(type, details) {
+        try {
+          if (typeof window.gtag === 'function') {
+            if (type === 'lead') {
+              window.gtag('event', 'generate_lead', {
+                event_category: 'Lead Generation',
+                event_label: details?.formName || 'Address Coverage Check',
+                value: 1.0,
+                currency: 'USD'
+              });
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-817539024'
+              });
+            } else if (type === 'call') {
+              window.gtag('event', 'contact', {
+                event_category: 'Phone Lead',
+                event_label: details?.phone || '940-437-0550'
+              });
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-817539024'
+              });
+            }
+          }
+        } catch (e) {
+          console.warn('Tracking error:', e);
+        }
+      };
+
+      // Auto-attach Click-to-Call conversion tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('click', function(e) {
+          var target = e.target.closest('a[href^="tel:"]');
+          if (target) {
+            var phone = target.getAttribute('href').replace('tel:', '');
+            window.trackInfinilinkConversion('call', { phone: phone });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-950 font-sans text-slate-100">
+    <Navigation />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

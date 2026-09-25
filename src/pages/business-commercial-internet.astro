@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
+const businessFaqs = [
+  {
+    question: "Do Infinilink business plans come with a Service Level Agreement (SLA)?",
+    answer: "Yes. Our commercial and enterprise point-to-point connections include a 99.9% uptime SLA with dedicated bandwidth guarantees and priority 2-hour dispatch windows."
+  },
+  {
+    question: "Can we get static IP addresses for our office servers and VPNs?",
+    answer: "Yes, static IPv4 addresses are available on all commercial packages for remote VPN tunnels, POS systems, security camera servers, and internal databases."
+  },
+  {
+    question: "Can Infinilink connect multiple ranch buildings or industrial yards?",
+    answer: "Absolutely. We specialize in point-to-multipoint wireless relays that link headquarters, barns, fabrication shops, and entry gates onto one unified high-speed network."
+  },
+  {
+    question: "What is the typical turnaround for commercial site surveys?",
+    answer: "Our Decatur-based commercial engineering team can perform a physical or remote elevation/line-of-sight analysis within 24 to 48 hours."
+  }
+];
+---
+
+<BaseLayout 
+  title="Commercial & Dedicated Business Internet | Wise County TX" 
+  description="High-throughput, low-latency commercial fixed wireless internet for businesses, ranches, and industrial facilities in Wise County, Texas. 99.9% SLA & static IPs."
+>
+  <div class="py-16 sm:py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Hero -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-950 text-cyan-400 border border-blue-800 uppercase tracking-wider mb-4">
+          Enterprise & Agribusiness Connectivity
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+          Dedicated Commercial Wireless Internet for Wise County
+        </h1>
+        <p class="text-lg text-slate-300">
+          Power your company, ranch operations, medical clinic, or retail storefront with rock-solid, low-latency broadband backed by guaranteed SLAs and local priority response.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-950 text-cyan-400 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">99.9% Uptime Guarantee</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Mission-critical point-to-point wireless links engineered with redundant tower feeds to keep your operations online through busy workweeks and severe weather.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">Static IPs & Symmetrical Options</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Host local servers, connect multi-site SD-WAN networks, maintain reliable VPN connections, and upload large design CAD or video assets with high upload speeds.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">Multi-Building Ranch Relays</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Extend connectivity from your main commercial entrance across barns, equipment sheds, guest quarters, and gate cameras using licensed wireless point-to-point relays.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Form Section -->
+      <div class="max-w-3xl mx-auto mb-20" id="business-check">
+        <ServiceAvailabilityForm 
+          title="Request a Commercial Site Assessment"
+          subtitle="Tell us about your facility location and throughput requirements. Our commercial network engineer will contact you directly."
+        />
+      </div>
+
+      <!-- Commercial FAQs -->
+      <FAQAccordion 
+        faqs={businessFaqs} 
+        title="Commercial Internet FAQs" 
+        subtitle="Common questions from Wise County business owners and ranch managers."
+      />
+
+    </div>
+  </div>
+</BaseLayout>

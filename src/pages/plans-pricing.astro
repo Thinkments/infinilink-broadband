@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlanComparisonTable from '../components/PlanComparisonTable.astro';
+import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+---
+
+<BaseLayout 
+  title="Unlimited Internet Plans & Pricing | Wise County TX" 
+  description="Explore transparent fixed wireless internet plans from $50/mo to $110/mo. Zero data caps, no contracts, and local Decatur TX support."
+>
+  <div class="py-16 sm:py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase tracking-wider mb-4">
+          Simple, Honest Pricing
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4">
+          Wise County Internet Plans <br class="hidden sm:inline" />With Zero Hidden Fees
+        </h1>
+        <p class="text-lg text-slate-300">
+          Choose the speed that fits your home or business. Every plan includes truly unlimited data, low latency for gaming and streaming, and our zero-throttle guarantee.
+        </p>
+      </div>
+
+      <!-- Plan Comparison Table -->
+      <div class="mb-20">
+        <PlanComparisonTable highlightedPlan="plus" />
+      </div>
+
+      <!-- Transparent Breakdown Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-blue-950 text-cyan-400 flex items-center justify-center font-bold text-lg mb-4">
+            01
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Zero Data Caps</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Unlike legacy satellite providers that limit you to 50-100GB before slashing speeds, Infinilink provides unlimited data 24/7/365 with zero penalties.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center font-bold text-lg mb-4">
+            02
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">No Annual Contracts</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            We believe in earning your business every single month. All residential broadband packages are 100% month-to-month. Cancel anytime without early termination fees.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold text-lg mb-4">
+            03
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Professional Installation</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Our local Decatur technicians handle outdoor antenna mounting, grounding, signal alignment with local towers, and indoor POE injector setup for rock-solid reliability.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Lead Capture Form -->
+      <div class="max-w-3xl mx-auto mb-20" id="service-check">
+        <ServiceAvailabilityForm 
+          title="Sign Up or Check Address Coverage"
+          subtitle="Enter your address below. A Wise County technician will verify signal strength and confirm your install schedule."
+        />
+      </div>
+
+      <!-- FAQ -->
+      <FAQAccordion />
+
+    </div>
+  </div>
+</BaseLayout>

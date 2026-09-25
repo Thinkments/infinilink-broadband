@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceAvailabilityForm from '../../components/ServiceAvailabilityForm.astro';
+import PlanComparisonTable from '../../components/PlanComparisonTable.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+
+const paradiseFaqs = [
+  {
+    question: "Do you service residential subdivisions and ranches in Paradise, TX?",
+    answer: "Yes. Our South Wise County broadcast towers provide comprehensive line-of-sight coverage throughout the City of Paradise, surrounding rural subdivisions, and country ranches."
+  },
+  {
+    question: "Why choose Infinilink over satellite providers in Paradise?",
+    answer: "Infinilink provides terrestrial wireless with sub-30ms latency, zero data caps, weather resilience during North Texas storms, and direct customer support from local Decatur technicians."
+  },
+  {
+    question: "What is included with installation in Paradise?",
+    answer: "Professional installation includes rooftop receiver mounting, precision tower alignment, outdoor shielded cable routing, and an indoor POE power adapter connected to your Wi-Fi router."
+  }
+];
+---
+
+<BaseLayout 
+  title="High Speed Internet Paradise TX | Local Provider" 
+  description="Fast, reliable fixed wireless internet for Paradise, TX (76073) and South Wise County. Zero data caps, low latency gaming, no contracts, and local support."
+>
+  <div class="py-16 sm:py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Paradise, Texas • South Wise County Hub
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
+          High-Speed Internet in <br />
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+            Paradise, Texas (76073)
+          </span>
+        </h1>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Get the high-speed broadband your family deserves. Infinilink delivers ultra-fast fixed wireless internet with low ping, unlimited data, and local Texas customer service.
+        </p>
+      </div>
+
+      <!-- Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-950 text-cyan-400 flex items-center justify-center font-bold text-xl">
+            📡
+          </div>
+          <h2 class="text-xl font-bold text-white">South Wise County Tower Reach</h2>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Direct wireless links connecting Paradise neighborhoods, ranches, and country estates with reliable high-throughput broadband.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center font-bold text-xl">
+            🎮
+          </div>
+          <h2 class="text-xl font-bold text-white">Lag-Free Online Gaming & Streaming</h2>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Sub-30ms ping times eliminate lag in online gaming and provide crisp, instant video calls for remote workers and students.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center font-bold text-xl">
+            ⭐
+          </div>
+          <h2 class="text-xl font-bold text-white">Locally Owned & Family Operated</h2>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Support a local Wise County business that reinvests in community infrastructure and provides personal, attentive service.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Plan Pricing -->
+      <div class="mb-20">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-black text-white">Paradise Internet Packages</h2>
+          <p class="text-slate-400 text-sm mt-2">Plus ($70/mo) and Premium ($110/mo) tiers with no contracts and zero data caps.</p>
+        </div>
+        <PlanComparisonTable highlightedPlan="plus" />
+      </div>
+
+      <!-- Lead Form -->
+      <div class="max-w-3xl mx-auto mb-20" id="service-check">
+        <ServiceAvailabilityForm 
+          title="Check Service Availability in Paradise, TX"
+          subtitle="Enter your address to verify immediate coverage and book your installation."
+        />
+      </div>
+
+      <FAQAccordion 
+        faqs={paradiseFaqs} 
+        title="Paradise Internet FAQs" 
+        subtitle="Common questions from Paradise and South Wise County residents."
+      />
+
+    </div>
+  </div>
+</BaseLayout>

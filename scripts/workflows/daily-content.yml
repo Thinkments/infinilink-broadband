@@ -1,0 +1,50 @@
+name: Daily E-E-A-T Broadband Content Automation
+
+on:
+  schedule:
+    - cron: '0 11 * * *' # 6:00 AM Central (11:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Grounded E-E-A-T Article
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npx ts-node scripts/content-cron/generate-eeat-article.ts
+
+      - name: Validate Astro Build & Collections
+        run: npm run build
+
+      - name: Commit & Push New Post
+        run: |
+          git config --global user.name "Infinilink Content Bot"
+          git config --global user.email "support@infinilinkbroadband.com"
+          git add src/content/blog/*.mdx
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore(blog): auto-publish daily E-E-A-T article [skip ci]"
+          git push origin main
+
+      - name: Trigger Netlify Deploy Hook
+        if: success()
+        run: |
+          if [ -n "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            curl -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          fi

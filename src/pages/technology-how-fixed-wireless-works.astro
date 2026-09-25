@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+
+const steps = [
+  {
+    step: "01",
+    title: "Dedicated Fiber Backbone",
+    desc: "Infinilink feeds gigabit fiber optic backhauls directly into our strategically positioned broadcast towers throughout Wise County."
+  },
+  {
+    step: "02",
+    title: "High-Elevation Microwave Relay",
+    desc: "Advanced multi-sector antennas transmit secure, encrypted wireless radio frequencies across line-of-sight topographical paths."
+  },
+  {
+    step: "03",
+    title: "Compact Rooftop Receiver",
+    desc: "Our technician mounts a discrete, low-profile transceiver on your roof or fascia aimed precisely at the optimal Wise County tower."
+  },
+  {
+    step: "04",
+    title: "Gigabit Home Routing",
+    desc: "A single shielded outdoor cable connects the antenna to an indoor Power-over-Ethernet (POE) unit, feeding full speed to your Wi-Fi 6 router."
+  }
+];
+---
+
+<BaseLayout 
+  title="How Fixed Wireless Internet Works | Technology & Architecture" 
+  description="Learn how fixed wireless delivers fiber-speed, low-latency internet to rural Wise County homes and ranches using local tower transmitters."
+>
+  <div class="py-16 sm:py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase tracking-wider mb-4">
+          WISP Technology Explained
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+          How Fixed Wireless Delivers Fiber Speeds Through the Air
+        </h1>
+        <p class="text-lg text-slate-300">
+          Discover how terrestrial radio engineering provides sub-30ms ping, rock-solid weather reliability, and truly unlimited bandwidth without digging up your yard or routing packets into outer space.
+        </p>
+      </div>
+
+      <!-- 4-Step Technical Architecture Diagram -->
+      <div class="mb-20">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">The 4-Step Transmission Architecture</h2>
+          <p class="text-slate-400 text-sm mt-1">From our fiber point-of-presence directly to your living room.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((item) => (
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative overflow-hidden group hover:border-cyan-500 transition">
+              <div class="text-5xl font-black text-slate-800 group-hover:text-cyan-950 transition mb-4">
+                {item.step}
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Technical Comparison Section -->
+      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-12 mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="space-y-6">
+            <h2 class="text-3xl font-black text-white tracking-tight">
+              Why Terrestrial Ground Wireless Beats Satellite
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              When data travels 22,000+ miles to geostationary satellites, physics dictates unavoidable latency (600ms+), rendering live video calls choppy and multiplayer gaming impossible.
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Infinilink’s towers in Decatur, Runaway Bay, and Bridgeport are located right in your community. Radio waves travel at the speed of light over just a few miles, ensuring ping times stay crisp (<strong class="text-cyan-400">15ms - 28ms</strong>).
+            </p>
+
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span>Uninterrupted performance during standard cloud and rain events</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span>Zero buried cables vulnerable to road construction damage</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span>Direct compatibility with modern Wi-Fi 6 mesh routers</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-4 text-center">Transmission Distance & Latency Reality</h3>
+            <div class="space-y-4 text-xs">
+              <div class="p-4 bg-slate-900 rounded-xl border border-cyan-500/30">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-bold text-white text-sm">Infinilink Fixed Wireless</span>
+                  <span class="text-cyan-400 font-bold">18 - 28 ms Ping</span>
+                </div>
+                <p class="text-slate-400">Distance to Tower: 3 - 8 miles (Ground Level)</p>
+              </div>
+
+              <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 opacity-80">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-bold text-white text-sm">LEO Satellite (Starlink)</span>
+                  <span class="text-amber-400 font-bold">45 - 85 ms Ping</span>
+                </div>
+                <p class="text-slate-400">Distance to Orbit: 340+ miles (Space)</p>
+              </div>
+
+              <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 opacity-60">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-bold text-white text-sm">Geostationary Satellite</span>
+                  <span class="text-rose-400 font-bold">600 - 800 ms Ping</span>
+                </div>
+                <p class="text-slate-400">Distance to Orbit: 22,236 miles (Deep Space)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead Capture Form -->
+      <div class="max-w-3xl mx-auto mb-20" id="service-check">
+        <ServiceAvailabilityForm 
+          title="Verify Line of Sight at Your Property"
+          subtitle="Submit your address and our engineering team will check elevation profiles against our nearest Wise County tower."
+        />
+      </div>
+
+      <FAQAccordion />
+
+    </div>
+  </div>
+</BaseLayout>

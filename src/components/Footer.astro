@@ -1,0 +1,127 @@
+---
+const serviceAreas = [
+  { name: 'Decatur, TX', href: '/service-areas/high-speed-internet-decatur-tx' },
+  { name: 'Runaway Bay, TX', href: '/service-areas/internet-provider-runaway-bay-tx' },
+  { name: 'Bridgeport, TX', href: '/service-areas/rural-internet-bridgeport-tx' },
+  { name: 'Alvord, TX', href: '/service-areas/high-speed-internet-alvord-tx' },
+  { name: 'Paradise, TX', href: '/service-areas/internet-service-paradise-tx' },
+];
+
+const quickLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Plans & Pricing', href: '/plans-pricing' },
+  { name: 'Commercial & Business Internet', href: '/business-commercial-internet' },
+  { name: 'How Fixed Wireless Works', href: '/technology-how-fixed-wireless-works' },
+  { name: 'Tech Blog & Rural Guides', href: '/blog' },
+  { name: 'Contact & Tech Support', href: '/contact' },
+  { name: 'RSS Feed', href: '/rss.xml' },
+];
+---
+
+<footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Brand & Mission Column -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-sky-400 flex items-center justify-center p-2">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.393 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white">INFINILINK</span>
+            <span class="block text-[10px] tracking-widest uppercase font-semibold text-cyan-400 -mt-1">BROADBAND</span>
+          </div>
+        </div>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Wise County's trusted local fixed wireless internet service provider. Delivering ultra-low latency, truly unlimited high-speed broadband with zero data caps and local same-day tech support.
+        </p>
+        <div class="pt-2">
+          <a 
+            href="tel:9404370550" 
+            class="inline-flex items-center text-cyan-400 font-bold hover:text-cyan-300 text-base"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            (940) 437-0550
+          </a>
+        </div>
+      </div>
+
+      <!-- Wise County Local Service Areas -->
+      <div>
+        <h4 class="text-white font-bold text-base mb-4 tracking-wide uppercase text-xs">Wise County Service Hubs</h4>
+        <ul class="space-y-2.5">
+          {serviceAreas.map((area) => (
+            <li>
+              <a 
+                href={area.href} 
+                class="hover:text-cyan-400 transition-colors flex items-center gap-2 group"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500/60 group-hover:bg-cyan-400"></span>
+                <span>{area.name}</span>
+              </a>
+            </li>
+          ))}
+          <li class="pt-1 text-xs text-slate-500">
+            Also serving Chico, Boyd, Slidell, Greenwood, and surrounding rural ranches.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-bold text-base mb-4 tracking-wide uppercase text-xs">Navigation & Specs</h4>
+        <ul class="space-y-2.5">
+          {quickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-cyan-400 transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- E-E-A-T Trust & Local Operations -->
+      <div>
+        <h4 class="text-white font-bold text-base mb-4 tracking-wide uppercase text-xs">Local Operations & Dispatch</h4>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-3">
+          <div class="flex items-start gap-2.5">
+            <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <div>
+              <p class="text-white font-semibold text-xs">No Contract Lock-in</p>
+              <p class="text-xs text-slate-400">Month-to-month flexibility with zero data caps.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <div>
+              <p class="text-white font-semibold text-xs">Wise County Dispatch</p>
+              <p class="text-xs text-slate-400">Local technicians based right here in Decatur, TX 76234.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+      <p>© {new Date().getFullYear()} Infinilink Broadband. All Rights Reserved. Locally Owned & Operated in Wise County, Texas.</p>
+      <div class="flex items-center space-x-6">
+        <a href="/plans-pricing" class="hover:text-white transition">Plans</a>
+        <a href="/contact" class="hover:text-white transition">Support</a>
+        <a href="/technology-how-fixed-wireless-works" class="hover:text-white transition">Technology</a>
+        <a href="/rss.xml" class="hover:text-white transition">RSS</a>
+      </div>
+    </div>
+  </div>
+</footer>
