@@ -8,28 +8,26 @@ interface Props {
 
 const {
   title = "See How Infinilink Solves Rural Internet in Wise County",
-  subtitle = "Watch our 30-second breakdown on why local fixed wireless beats satellite lag, hidden fees, and corporate phone trees.",
+  subtitle = "Watch our breakdown on why local fixed wireless beats satellite lag, hidden fees, and corporate phone trees.",
   youtubeId = "", // e.g. unlisted youtube ID or fallback to video showcase preview
   className = ""
 } = Astro.props;
 ---
 
-<section class={`py-16 sm:py-20 bg-slate-900/40 border-y border-slate-800/80 relative overflow-hidden ${className}`}>
-  <div class="absolute inset-0 bg-radial from-cyan-950/20 via-transparent to-transparent pointer-events-none"></div>
-  
+<section class={`py-16 sm:py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden ${className}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase tracking-wider mb-3">
-        <svg class="w-3.5 h-3.5 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-bold bg-blue-50 text-blue-900 border border-blue-200 uppercase tracking-wider mb-3">
+        <svg class="w-4 h-4 text-infinite-blue" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8 5v14l11-7z" />
         </svg>
-        Featured Commercial
+        Featured Story
       </span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
         {title}
       </h2>
-      <p class="mt-3 text-base sm:text-lg text-slate-300">
+      <p class="mt-3 text-base sm:text-lg text-slate-700 font-medium">
         {subtitle}
       </p>
     </div>
@@ -38,7 +36,7 @@ const {
       
       <!-- Video Player Frame / Interactive Preview -->
       <div class="lg:col-span-7">
-        <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl group aspect-video flex items-center justify-center">
+        <div class="relative rounded-2xl overflow-hidden border border-slate-300 bg-navy-950 shadow-lg group aspect-video flex items-center justify-center">
           
           {youtubeId ? (
             <iframe 
@@ -49,33 +47,33 @@ const {
               allowfullscreen
             ></iframe>
           ) : (
-            <div class="relative w-full h-full flex flex-col justify-between p-6 bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950/40">
+            <div class="relative w-full h-full flex flex-col justify-between p-6 bg-navy-900 text-white">
               <div class="flex items-center justify-between">
-                <span class="px-2.5 py-1 rounded bg-blue-600/30 text-blue-300 border border-blue-500/30 text-xs font-bold uppercase tracking-wider">
-                  Official Spot (0:29)
+                <span class="px-3 py-1 rounded bg-infinite-blue text-white text-xs font-bold uppercase tracking-wider">
+                  Community Spot
                 </span>
-                <span class="text-xs text-slate-400 font-medium">Decatur & Wise County, TX</span>
+                <span class="text-sm text-slate-200 font-medium">Wise County, TX</span>
               </div>
 
               <!-- Center Play Badge & Hook -->
               <div class="text-center my-auto py-4">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-xl shadow-cyan-500/30 transform group-hover:scale-110 transition duration-300">
-                  <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-infinite-blue hover:bg-infinite-blue-dark flex items-center justify-center text-white shadow-lg transition duration-200">
+                  <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <h3 class="mt-4 text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition">
-                  "High Speeds. Honest Prices. Your Neighbors."
+                <h3 class="mt-4 text-xl sm:text-2xl font-bold text-white">
+                  "Real Speeds. Honest Prices. Your Neighbors."
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-400 mt-1">
-                  Flat-rate plans ($50–$110/mo) • Zero Contracts • Same-Day Dispatch
+                <p class="text-sm sm:text-base text-slate-200 mt-2 font-medium">
+                  Flat-rate plans ($40–$110/mo) • Zero Contracts • Local Support
                 </p>
               </div>
 
               <!-- Bottom Bar -->
-              <div class="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs text-slate-400">
-                <span>HD Broadcast Ready</span>
-                <a href="#service-check" class="text-cyan-400 font-semibold hover:underline">Check Address &rarr;</a>
+              <div class="flex items-center justify-between pt-3 border-t border-navy-800 text-sm text-slate-300">
+                <span>Runaway Bay & Wise County</span>
+                <a href="#service-check" class="text-sky-300 font-bold hover:underline">Check Address &rarr;</a>
               </div>
             </div>
           )}
@@ -86,50 +84,50 @@ const {
       <!-- Value Proposition Side Cards -->
       <div class="lg:col-span-5 space-y-4">
         
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl hover:border-cyan-500/40 transition">
+        <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-xs hover:border-infinite-blue transition">
           <div class="flex items-start space-x-3.5">
-            <div class="w-10 h-10 rounded-lg bg-cyan-950/80 border border-cyan-800/80 flex items-center justify-center text-cyan-400 flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-infinite-blue flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white">Direct Terrestrial Microwave</h4>
-              <p class="text-xs sm:text-sm text-slate-400 mt-1">
-                Zero satellite bounce. Low &lt;30ms ping for gaming, streaming 4K, and Zoom calls without buffering.
+              <h3 class="text-base font-bold text-slate-900">Direct Terrestrial Wireless</h3>
+              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
+                Direct connections from local land-based towers. Typical ping is 20–35ms so video calls don't freeze and movies stream smoothly.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl hover:border-cyan-500/40 transition">
+        <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-xs hover:border-infinite-blue transition">
           <div class="flex items-start space-x-3.5">
-            <div class="w-10 h-10 rounded-lg bg-blue-950/80 border border-blue-800/80 flex items-center justify-center text-blue-400 flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-infinite-blue flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white">Flat-Rate Pricing Guarantee</h4>
-              <p class="text-xs sm:text-sm text-slate-400 mt-1">
-                No teaser rates that double in month 12. No surprise equipment rental or line fees on your bill.
+              <h3 class="text-base font-bold text-slate-900">One Flat Price Every Month</h3>
+              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
+                No contracts. No teaser rates that double later. No surprise fees. Pay by check, by phone, or online.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-slate-900/90 border border-slate-800 p-5 rounded-xl hover:border-cyan-500/40 transition">
+        <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-xs hover:border-infinite-blue transition">
           <div class="flex items-start space-x-3.5">
-            <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/80 flex items-center justify-center text-emerald-400 flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-infinite-blue flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white">Decatur Local Service Fleet</h4>
-              <p class="text-xs sm:text-sm text-slate-400 mt-1">
-                Field trucks on Wise County roads daily for same-day line-of-sight verification and rapid support.
+              <h3 class="text-base font-bold text-slate-900">Local Wise County Family Support</h3>
+              <p class="text-sm text-slate-700 mt-1 leading-relaxed">
+                Free line-of-sight check before you pay a dime. Most problems solved within the hour, by phone or text.
               </p>
             </div>
           </div>
@@ -138,7 +136,8 @@ const {
         <div class="pt-2">
           <a 
             href="#service-check" 
-            class="block text-center w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition"
+            class="block text-center w-full bg-infinite-blue hover:bg-infinite-blue-dark text-white font-bold py-3.5 px-6 rounded-xl shadow-xs transition duration-200"
+            data-track="video-showcase-check"
           >
             Check Address Availability &rarr;
           </a>

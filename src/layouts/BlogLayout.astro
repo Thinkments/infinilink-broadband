@@ -51,64 +51,63 @@ const blogPostingSchema = {
 <BaseLayout title={title} description={description} ogImage={heroImageUrl}>
   <script type="application/ld+json" slot="schema" set:html={JSON.stringify(blogPostingSchema)} />
 
-  <article class="py-12 sm:py-16">
+  <article class="py-12 sm:py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Breadcrumb Navigation -->
-      <nav class="flex items-center space-x-2 text-xs text-slate-400 mb-8" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-cyan-400 transition">Home</a>
-        <span>/</span>
-        <a href="/blog" class="hover:text-cyan-400 transition">Blog</a>
-        <span>/</span>
-        <span class="text-slate-300 truncate max-w-[200px] sm:max-w-none">{title}</span>
+      <nav class="flex items-center space-x-2 text-sm text-slate-700 mb-8" aria-label="Breadcrumb">
+        <a href="/" class="text-infinite-blue hover:underline">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog" class="text-infinite-blue hover:underline">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-navy-950 font-bold truncate max-w-[200px] sm:max-w-none">{title}</span>
       </nav>
 
       <!-- Post Header -->
       <header class="mb-10 text-center sm:text-left">
         <div class="flex flex-wrap items-center gap-3 mb-4 justify-center sm:justify-start">
-          <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+          <span class="bg-blue-50 text-navy-900 border border-blue-200 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">
             {category}
           </span>
-          <span class="text-xs text-slate-400">
+          <span class="text-sm text-slate-700 font-medium">
             Published: {formattedDate}
           </span>
-          <span class="text-xs text-slate-500">•</span>
-          <span class="text-xs text-slate-400">
+          <span class="text-sm text-slate-400" aria-hidden="true">•</span>
+          <span class="text-sm text-slate-700 font-medium">
             By {author}
           </span>
         </div>
 
-        <h1 class="post-title text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+        <h1 class="post-title text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight leading-tight mb-6">
           {title}
         </h1>
 
-        <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
+        <p class="text-lg text-slate-700 leading-relaxed max-w-3xl font-medium">
           {description}
         </p>
       </header>
 
       <!-- Featured Hero Visual -->
-      <div class="relative rounded-2xl overflow-hidden mb-12 border border-slate-800 shadow-2xl bg-slate-900">
+      <div class="relative rounded-2xl overflow-hidden mb-12 border border-slate-200 shadow-md bg-white">
         <img 
           src={heroImageUrl} 
           alt={altText || title} 
           class="w-full h-72 sm:h-96 object-cover" 
           loading="eager"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
       </div>
 
       <!-- MDX Body Content -->
-      <div class="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-white prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-table:border-collapse prose-th:border prose-th:border-slate-800 prose-th:p-3 prose-th:bg-slate-900 prose-td:border prose-td:border-slate-800 prose-td:p-3 leading-relaxed text-slate-200">
+      <div class="prose prose-slate prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tight prose-headings:text-navy-950 prose-a:text-infinite-blue prose-a:font-semibold prose-a:underline hover:prose-a:text-infinite-blue-dark prose-table:border-collapse prose-th:border prose-th:border-slate-300 prose-th:p-3 prose-th:bg-slate-100 prose-th:text-navy-950 prose-td:border prose-td:border-slate-200 prose-td:p-3 leading-relaxed text-slate-700 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-xs">
         <slot />
       </div>
 
       <!-- Tags list -->
       {tags && tags.length > 0 && (
-        <div class="mt-12 pt-6 border-t border-slate-800 flex flex-wrap items-center gap-2">
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-2">Topic Tags:</span>
+        <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center gap-2">
+          <span class="text-sm font-bold text-navy-950 uppercase tracking-wider mr-2">Topic Tags:</span>
           {tags.map((tag: string) => (
-            <span class="text-xs bg-slate-900 text-slate-300 border border-slate-800 px-3 py-1 rounded-md">
+            <span class="text-sm bg-slate-50 text-navy-950 border border-slate-200 px-3 py-1 rounded-md font-medium shadow-xs">
               #{tag}
             </span>
           ))}
@@ -116,14 +115,14 @@ const blogPostingSchema = {
       )}
 
       <!-- Author Bio Box -->
-      <div class="mt-12 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row items-center gap-5">
-        <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg shadow-cyan-500/20">
+      <div class="mt-12 p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-navy-900 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">
           IB
         </div>
         <div>
-          <h4 class="text-base font-bold text-white mb-1">Written by the Infinilink Technical Engineering Team</h4>
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-            Our network engineers, RF technicians, and local installers operate out of Decatur, Texas, managing high-reliability fixed wireless microwave relay infrastructure throughout Wise County.
+          <h2 class="text-lg font-bold text-navy-950 mb-1">Written by the Infinilink Local Team</h2>
+          <p class="text-base text-slate-700 leading-relaxed font-normal">
+            Based in Runaway Bay, Texas, our family team manages local wireless towers throughout Wise County, providing steady internet to homes, ranches, and small businesses.
           </p>
         </div>
       </div>
@@ -131,8 +130,8 @@ const blogPostingSchema = {
       <!-- Bottom Lead Conversion Section -->
       <div class="mt-16">
         <ServiceAvailabilityForm 
-          title="Ready for Reliable, Low-Latency Internet in Wise County?"
-          subtitle="Join hundreds of homes and ranches across Decatur, Runaway Bay, Bridgeport, and Alvord enjoying unlimited fixed wireless broadband."
+          title="Ready for Reliable, Honest Internet in Wise County?"
+          subtitle="Join hundreds of homes and ranches across Runaway Bay, Bridgeport, Decatur, Alvord, and Paradise enjoying unlimited internet."
         />
       </div>
 

@@ -7,14 +7,17 @@ interface Props {
 
 const { 
   title = "Check Service Availability at Your Address", 
-  subtitle = "Enter your Wise County location to verify immediate fixed wireless line-of-sight & tower speeds.",
+  subtitle = "Enter your Wise County address to verify free line-of-sight coverage and typical speeds.",
   className = "" 
 } = Astro.props;
 ---
 
-<div class={`bg-slate-900/90 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-2xl ${className}`}>
-  {title && <h3 class="text-2xl font-bold text-white mb-2">{title}</h3>}
-  {subtitle && <p class="text-slate-400 text-sm mb-6">{subtitle}</p>}
+<div class={`bg-white p-6 sm:p-8 rounded-2xl border-2 border-slate-200 shadow-lg ${className}`}>
+  {title && <h2 class="text-2xl sm:text-3xl font-black text-[#0B1F3A] mb-2">{title}</h2>}
+  {subtitle && <p class="text-slate-700 text-base mb-6 leading-relaxed font-medium">{subtitle}</p>}
+
+  <!-- Form Status Announcement Area for Screen Readers -->
+  <div id="service-form-status" aria-live="polite" class="sr-only"></div>
 
   <form 
     id="service-availability-form"
@@ -24,79 +27,100 @@ const {
     netlify-honeypot="bot-field" 
     action="/contact?status=success"
     onsubmit="if(window.trackInfinilinkConversion) { window.trackInfinilinkConversion('lead', { formName: 'Address Coverage Check' }); }"
-    class="space-y-4"
+    class="space-y-5"
+    data-track="form-availability"
   >
     <input type="hidden" name="form-name" value="service-check" />
+    <input type="hidden" name="lead_source" id="lead_source" value="Direct Website" />
+    
     <p class="hidden">
-      <label>Do not fill: <input name="bot-field" /></label>
+      <label for="service-bot-field" class="sr-only">Do not fill this field if human</label>
+      <input id="service-bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Full Name</label>
+        <label for="name" class="block text-base font-bold text-[#0B1F3A] mb-1.5">
+          Full Name <span class="text-red-700" aria-hidden="true">*</span>
+        </label>
         <input 
           type="text" 
           id="name" 
           name="name" 
           required 
+          autocomplete="name"
           placeholder="e.g., John Miller"
-          class="w-full bg-slate-800/80 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-500 transition" 
+          aria-required="true"
+          class="w-full bg-white border-2 border-slate-300 text-slate-900 rounded-xl px-4 py-3.5 focus:outline-none focus:border-[#0060B6] focus:ring-4 focus:ring-[#0060B6]/20 placeholder:text-slate-500 transition font-medium text-base" 
         />
       </div>
       <div>
-        <label for="phone" class="block text-sm font-medium text-slate-300 mb-1">Phone Number</label>
+        <label for="phone" class="block text-base font-bold text-[#0B1F3A] mb-1.5">
+          Phone Number <span class="text-red-700" aria-hidden="true">*</span>
+        </label>
         <input 
           type="tel" 
           id="phone" 
           name="phone" 
           required 
+          autocomplete="tel"
           placeholder="(940) 555-0199"
-          class="w-full bg-slate-800/80 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-500 transition" 
+          aria-required="true"
+          aria-describedby="phone-desc"
+          class="w-full bg-white border-2 border-slate-300 text-slate-900 rounded-xl px-4 py-3.5 focus:outline-none focus:border-[#0060B6] focus:ring-4 focus:ring-[#0060B6]/20 placeholder:text-slate-500 transition font-medium text-base" 
         />
+        <p id="phone-desc" class="text-xs text-slate-600 mt-1">We will only call or text regarding your signal check.</p>
       </div>
     </div>
 
     <div>
-      <label for="address" class="block text-sm font-medium text-slate-300 mb-1">Service Street Address (Wise County, TX)</label>
+      <label for="address" class="block text-base font-bold text-[#0B1F3A] mb-1.5">
+        Service Street Address <span class="text-red-700" aria-hidden="true">*</span>
+      </label>
       <input 
         type="text" 
         id="address" 
         name="address" 
         required 
+        autocomplete="street-address"
         placeholder="e.g., 1234 CR 1110, Decatur, TX 76234" 
-        class="w-full bg-slate-800/80 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-500 transition" 
+        aria-required="true"
+        aria-describedby="address-desc"
+        class="w-full bg-white border-2 border-slate-300 text-slate-900 rounded-xl px-4 py-3.5 focus:outline-none focus:border-[#0060B6] focus:ring-4 focus:ring-[#0060B6]/20 placeholder:text-slate-500 transition font-medium text-base" 
       />
+      <p id="address-desc" class="text-xs text-slate-600 mt-1">Include street, city, and zip for line-of-sight tower calculation.</p>
     </div>
 
     <div>
-      <label for="plan_interest" class="block text-sm font-medium text-slate-300 mb-1">Plan of Interest</label>
+      <label for="plan_interest" class="block text-base font-bold text-[#0B1F3A] mb-1.5">
+        Plan of Interest
+      </label>
       <select 
         id="plan_interest" 
         name="plan_interest" 
-        class="w-full bg-slate-800/80 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+        class="w-full bg-white border-2 border-slate-300 text-slate-900 rounded-xl px-4 py-3.5 focus:outline-none focus:border-[#0060B6] focus:ring-4 focus:ring-[#0060B6]/20 transition font-medium text-base"
       >
-        <option value="plus">Plus Plan - $70/mo (Most Popular - Streaming & Gaming)</option>
-        <option value="starter">Starter Plan (Web Browsing, Email & Work)</option>
-        <option value="premium">Premium Plan - $110/mo (Heavy Multi-Device 4K & Cloud)</option>
-        <option value="business">Commercial / Dedicated Business High-Speed</option>
+        <option value="plus" selected>Plus Plan – $70/mo (Most Popular – Several TVs, gaming, work)</option>
+        <option value="starter">Starter Plan – $40/mo (Great for 1–2 people, streaming, email)</option>
+        <option value="premium">Premium Plan – $110/mo (Big households & home offices)</option>
+        <option value="custom">Custom / multi-building setup: request a quote</option>
       </select>
     </div>
 
     <button 
       type="submit" 
-      class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold py-3.5 px-6 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition duration-200 transform active:scale-[0.99] flex items-center justify-center space-x-2"
+      class="w-full bg-[#0060B6] hover:bg-[#004D91] text-white font-black text-lg py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 touch-target"
     >
       <span>Check Address Availability</span>
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
       </svg>
     </button>
     
-    <p class="text-xs text-slate-500 text-center mt-2 flex items-center justify-center gap-1.5">
-      <svg class="w-4 h-4 text-emerald-400 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-      </svg>
-      Same-day dispatch & line-of-sight checks across Wise County. No spam, ever.
-    </p>
+    <div class="pt-2 text-center text-sm text-slate-700 leading-relaxed font-medium">
+      <p>
+        <strong class="text-[#0B1F3A]">Free Line-of-Sight Check:</strong> If we can't give you a good connection, we'll tell you before you pay a dime.
+      </p>
+    </div>
   </form>
 </div>

@@ -1,16 +1,91 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #0B1F3A;
+  --color-navy-dark: #061324;
+  --color-navy-light: #162E52;
+  --color-navy-700: #1C3B68;
+  --color-navy-800: #122846;
+  --color-navy-900: #0B1F3A;
+  --color-navy-950: #061324;
+  --color-infinite-blue: #0060B6;
+  --color-infinite-blue-hover: #004D91;
+  --color-infinite-blue-dark: #004D91;
+  --color-infinite-blue-light: #EBF4FC;
+}
+
 @layer base {
+  :root {
+    --infinite-blue: #0060B6;
+    --infinite-blue-hover: #004D91;
+    --navy: #0B1F3A;
+    --navy-light: #162E52;
+    --navy-900: #0B1F3A;
+    --navy-950: #061324;
+  }
+
   html {
+    font-size: 18px;
     scroll-behavior: smooth;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #111827;
+    background-color: #ffffff;
+  }
+
+  body {
+    font-size: 1rem; /* 18px base */
+    line-height: 1.6;
+    color: #111827;
+    background-color: #ffffff;
+  }
+
+  /* Strong, visible focus ring for WCAG 2.2 AA (Criterion 2.4.7 / 2.4.11) */
+  :focus-visible {
+    outline: 3px solid #0060B6 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-.glow-blue {
-  box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.25);
+/* Accessible Skip-to-content Link */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0060B6;
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  transition: top 0.15s ease-in-out;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #0B1F3A;
+  outline-offset: 2px;
+}
+
+/* Minimum 44x44px touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
 }

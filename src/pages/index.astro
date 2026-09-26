@@ -6,78 +6,85 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import VideoAdShowcase from '../components/VideoAdShowcase.astro';
 
 const localAreas = [
-  { name: 'Decatur, TX', href: '/service-areas/high-speed-internet-decatur-tx', desc: 'Wise County seat tower reach & residential ranches' },
-  { name: 'Runaway Bay, TX', href: '/service-areas/internet-provider-runaway-bay-tx', desc: 'Lake Bridgeport waterfront & low-latency streaming' },
+  { name: 'Runaway Bay, TX', href: '/service-areas/internet-provider-runaway-bay-tx', desc: 'Lake Bridgeport waterfront & steady neighborhood streaming' },
   { name: 'Bridgeport, TX', href: '/service-areas/rural-internet-bridgeport-tx', desc: 'Agricultural acreage & work-from-home reliability' },
+  { name: 'Decatur, TX', href: '/service-areas/high-speed-internet-decatur-tx', desc: 'Wise County seat coverage & residential ranches' },
   { name: 'Alvord, TX', href: '/service-areas/high-speed-internet-alvord-tx', desc: 'North Wise County unlimited high-speed broadband' },
   { name: 'Paradise, TX', href: '/service-areas/internet-service-paradise-tx', desc: 'South Wise County family-owned wireless connectivity' },
 ];
 ---
 
 <BaseLayout 
-  title="Fast, Truly Unlimited Rural Internet in Wise County, TX" 
-  description="Infinilink Broadband delivers high-speed fixed wireless internet with zero data caps, low ping, and same-day local support across Decatur, Runaway Bay, Bridgeport, and Wise County."
+  title="Your Local Internet Company | Infinilink Broadband Wise County, TX" 
+  description="Infinilink Broadband delivers honest, reliable internet across Runaway Bay, Bridgeport, Decatur, and Wise County. Zero contracts, zero data caps, real speeds."
 >
 
-  <!-- Hero Section with Background Glow and Lead Capture -->
-  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
-    <div class="absolute inset-0 bg-radial from-blue-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <!-- Hero Section (Light & Clean) -->
+  <section class="relative bg-white pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Hero Copy -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-400">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            Wise County's Premier Local WISP
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-sm font-bold text-navy-900">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block" aria-hidden="true"></span>
+            Wise County's Local Internet Provider
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-            Truly Unlimited <br/>
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-300">
-              High-Speed Internet
-            </span> <br/>
-            Across Wise County.
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-[1.15]">
+            Your Local Internet Company.<br/>
+            <span class="text-infinite-blue">Real People. Real Speeds.</span><br/>
+            No Contracts.
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-            Tired of satellite lag, low data limits, and empty promises from national telecoms? Infinilink delivers ultra-fast fixed wireless broadband with <strong class="text-white">zero data caps, low ping,</strong> and <strong class="text-white">local same-day tech dispatch</strong>.
+          <p class="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Fast is nice. Steady is better. Built so video calls don't freeze and movies don't buffer, even at 8 pm. Real speeds, not "up to" speeds.
           </p>
 
           <!-- Key Benefit Badges -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
-            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl text-center">
-              <div class="text-xl font-black text-cyan-400">0 GB</div>
-              <div class="text-[11px] text-slate-400 uppercase font-semibold">Data Caps Ever</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0 text-left">
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-xs">
+              <div class="text-2xl font-black text-infinite-blue">0 GB</div>
+              <div class="text-sm text-slate-700 font-bold uppercase tracking-wide">Data Caps Ever</div>
+              <p class="text-sm text-slate-600 mt-0.5">No throttling or penalties</p>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl text-center">
-              <div class="text-xl font-black text-emerald-400">&lt;30ms</div>
-              <div class="text-[11px] text-slate-400 uppercase font-semibold">Low Latency Ping</div>
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-xs">
+              <div class="text-2xl font-black text-emerald-700">20–35ms</div>
+              <div class="text-sm text-slate-700 font-bold uppercase tracking-wide">Typical Low Lag</div>
+              <p class="text-sm text-slate-600 mt-0.5">Smooth calls & video</p>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl text-center col-span-2 sm:col-span-1">
-              <div class="text-xl font-black text-blue-400">100%</div>
-              <div class="text-[11px] text-slate-400 uppercase font-semibold">Local Decatur Team</div>
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-xs">
+              <div class="text-2xl font-black text-navy-900">100%</div>
+              <div class="text-sm text-slate-700 font-bold uppercase tracking-wide">Local Family Team</div>
+              <p class="text-sm text-slate-600 mt-0.5">Runaway Bay, TX</p>
             </div>
           </div>
 
+          <!-- Hero Action Buttons -->
           <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a 
               href="#service-check" 
-              class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold py-4 px-8 rounded-xl shadow-xl shadow-cyan-500/20 transition duration-200 text-center"
+              class="w-full sm:w-auto bg-infinite-blue hover:bg-infinite-blue-dark text-white font-bold py-4 px-8 rounded-xl shadow-xs transition duration-200 text-center min-h-[48px] flex items-center justify-center text-lg"
+              data-track="hero-check-availability"
             >
               Check Your Address
             </a>
             <a 
-              href="tel:9404370550" 
-              class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition"
+              href="tel:+19404370550" 
+              class="w-full sm:w-auto bg-white hover:bg-slate-50 text-navy-950 border-2 border-navy-900 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 shadow-xs transition duration-200 min-h-[48px] text-lg"
+              data-track="hero-call"
             >
-              <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-infinite-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
-              <span>(940) 437-0550</span>
+              <span>Call (940) 437-0550</span>
             </a>
           </div>
+
+          <p class="text-sm text-slate-600 pt-1">
+            Free line-of-sight check before you pay a dime. If we can't give you a good connection, we'll tell you upfront.
+          </p>
 
         </div>
 
@@ -90,55 +97,102 @@ const localAreas = [
     </div>
   </section>
 
+  <!-- Navy Trust & Reliability Bar -->
+  <section class="bg-navy-900 text-white py-8 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left items-center">
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-navy-800 border border-navy-700 flex items-center justify-center text-emerald-400 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-white text-base">Triple Fiber Backhaul</div>
+            <div class="text-slate-300 text-sm">Three separate fiber lines feed our network</div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-navy-800 border border-navy-700 flex items-center justify-center text-emerald-400 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-white text-base">100% Uptime (Last 90 Days)</div>
+            <div class="text-slate-300 text-sm">
+              <a href="https://status.infinilinkbroadband.com" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white underline">
+                View live public status &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-navy-800 border border-navy-700 flex items-center justify-center text-emerald-400 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold text-white text-base">Local Support by Phone or Text</div>
+            <div class="text-slate-300 text-sm">Most problems solved within the hour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Value Pillars Section -->
-  <section class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+  <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Engineered for Real Rural Performance
+        <h2 class="text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
+          Internet the Way It Should Be in Wise County
         </h2>
-        <p class="mt-3 text-slate-400">
-          We don't route your data to space or rely on 50-year-old copper phone lines. Here is why Wise County trusts Infinilink:
+        <p class="mt-3 text-lg text-slate-700 font-medium">
+          No dish to buy. No satellite lag. When something is wrong, you call a neighbor, not a chatbot.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-cyan-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-blue-950 text-cyan-400 border border-blue-800 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4 hover:border-infinite-blue transition shadow-xs">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-infinite-blue flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">Low Latency Gaming & 4K</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Terrestrial microwave towers mean round-trip ping times under 30ms. Play fast multiplayer games, join Zoom meetings with zero stutter, and stream 4K movies smoothly.
+          <h3 class="text-xl font-bold text-navy-950">Smooth Streaming & Video Calls</h3>
+          <p class="text-slate-700 text-base leading-relaxed">
+            Video call the grandkids without the picture freezing. Land-based towers provide steady connections without satellite lag, so your movies won't buffer at 8 pm.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-cyan-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 border border-cyan-800 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4 hover:border-infinite-blue transition shadow-xs">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-infinite-blue flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">Zero Data Caps & No Throttling</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Download game patches, backup photos to the cloud, and connect every smart device in your home. You will never receive an overage bill or speed penalty.
+          <h3 class="text-xl font-bold text-navy-950">Zero Data Caps & No Throttling</h3>
+          <p class="text-slate-700 text-base leading-relaxed">
+            One flat price every month. Download updates, stream TV shows, and connect every device in your home. You will never receive an overage bill or speed penalty.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-cyan-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-emerald-950 text-emerald-400 border border-emerald-800 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4 hover:border-infinite-blue transition shadow-xs">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-infinite-blue flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">Same-Day Local Dispatch</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Our certified field technicians are headquartered in Decatur. If you ever need an antenna adjustment or setup help, we are minutes away, not days.
+          <h3 class="text-xl font-bold text-navy-950">We Handle the Whole Setup</h3>
+          <p class="text-slate-700 text-base leading-relaxed">
+            We do it all: the antenna, the router, and your Wi-Fi. No tech talk required. Most problems are solved within the hour by phone or text.
           </p>
         </div>
 
@@ -146,20 +200,20 @@ const localAreas = [
     </div>
   </section>
 
-  <!-- High-Converting Video Ad & Commercial Showcase -->
+  <!-- Video Showcase Component -->
   <VideoAdShowcase />
 
   <!-- Transparent Plans Section -->
-  <section class="py-20">
+  <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Straightforward Pricing</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mt-2">
-          Choose the Perfect Internet Plan
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-sm font-bold text-infinite-blue uppercase tracking-widest">Straightforward Plans</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight mt-2">
+          Choose the Right Plan for Your Home
         </h2>
-        <p class="mt-4 text-base sm:text-lg text-slate-300">
-          No mandatory contracts. No equipment rental surprises. Just reliable, unlimited high-speed broadband.
+        <p class="mt-4 text-base sm:text-lg text-slate-700 font-medium">
+          One flat price. No contracts. No data caps. No throttling. Same plans and prices for homes and businesses.
         </p>
       </div>
 
@@ -168,16 +222,35 @@ const localAreas = [
     </div>
   </section>
 
+  <!-- Security & Customer Care Callout Band (Navy) -->
+  <section class="py-12 bg-navy-900 text-white border-y border-navy-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-navy-950 border border-navy-800 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6">
+        <div class="w-14 h-14 rounded-full bg-navy-900 border border-navy-700 flex items-center justify-center text-amber-400 shrink-0">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div class="space-y-2 text-center md:text-left">
+          <h3 class="text-xl font-bold text-white">Our Security Promise to Neighbors</h3>
+          <p class="text-slate-100 text-base leading-relaxed">
+            Same price every month. Pay by check, by phone, or online through our secure portal. <strong class="text-white">We will never call asking for your password or for payment by gift card.</strong> If you're ever unsure about a call or message, hang up and call our Runaway Bay office directly at <a href="tel:+19404370550" class="text-sky-300 font-bold hover:underline">(940) 437-0550</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Wise County Coverage Areas Hub Grid -->
-  <section class="py-16 bg-slate-900/40 border-t border-slate-800/80">
+  <section class="py-16 bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl font-black text-white tracking-tight sm:text-4xl">
+        <h2 class="text-3xl font-black text-navy-950 tracking-tight sm:text-4xl">
           Serving Communities Across Wise County, TX
         </h2>
-        <p class="mt-3 text-slate-400">
-          Click your nearest community to review dedicated tower coverage and localized install timelines:
+        <p class="mt-3 text-slate-700 font-medium text-base sm:text-lg">
+          Click your nearest town to view local tower coverage and setup details:
         </p>
       </div>
 
@@ -185,33 +258,33 @@ const localAreas = [
         {localAreas.map((area) => (
           <a 
             href={area.href} 
-            class="bg-slate-900 border border-slate-800 hover:border-cyan-500 p-6 rounded-xl transition duration-200 group flex flex-col justify-between"
+            class="bg-white border border-slate-200 hover:border-infinite-blue p-6 rounded-xl transition duration-200 group flex flex-col justify-between shadow-xs hover:shadow-md min-h-[44px]"
           >
             <div>
               <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">{area.name}</h3>
-                <span class="text-emerald-400 text-xs font-semibold bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Active</span>
+                <h3 class="text-xl font-bold text-navy-950 group-hover:text-infinite-blue transition">{area.name}</h3>
+                <span class="text-emerald-900 text-xs font-bold bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">Active Towers</span>
               </div>
-              <p class="text-xs text-slate-400 leading-relaxed mb-4">{area.desc}</p>
+              <p class="text-sm text-slate-700 leading-relaxed mb-4">{area.desc}</p>
             </div>
-            <div class="text-xs font-semibold text-cyan-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-              <span>View local coverage details</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-sm font-bold text-infinite-blue flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>View local area details</span>
+              <svg class="w-4 h-4 text-infinite-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </div>
           </a>
         ))}
 
-        <div class="bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-800/60 p-6 rounded-xl flex flex-col justify-between">
+        <div class="bg-blue-50 border border-blue-200 p-6 rounded-xl flex flex-col justify-between shadow-xs">
           <div>
-            <h3 class="text-lg font-bold text-white mb-2">Rural Ranches & Outlying Land</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Have an acreage property or barndominium outside city limits? Our high-gain receivers can connect properties up to 10+ miles from our towers.
+            <h3 class="text-xl font-bold text-navy-950 mb-2">Barns, Shops & Outlying Land</h3>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              Have an acreage property, barn, or barndominium outside town? Ask us about custom multi-building wireless links.
             </p>
           </div>
-          <a href="#service-check" class="text-xs font-bold text-cyan-300 hover:text-white flex items-center gap-1">
-            <span>Check custom ranch availability →</span>
+          <a href="#service-check" class="text-sm font-bold text-infinite-blue hover:text-infinite-blue-dark flex items-center gap-1">
+            <span>Request custom property quote &rarr;</span>
           </a>
         </div>
       </div>
@@ -220,33 +293,35 @@ const localAreas = [
   </section>
 
   <!-- FAQ Section with Schema -->
-  <section class="py-16 bg-slate-950">
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <FAQAccordion />
     </div>
   </section>
 
-  <!-- Final Call to Action -->
-  <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+  <!-- Final Call to Action (Navy Band) -->
+  <section class="py-16 sm:py-20 bg-navy-950 text-white border-t border-navy-900">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
       <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        Ready for Internet that Actually Works in Wise County?
+        Ready for Honest Internet in Wise County?
       </h2>
-      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Speak with our local Decatur team today to verify line-of-sight and schedule your professional installation.
+      <p class="text-base sm:text-lg text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium">
+        Speak with a real person at our Runaway Bay office today to verify line-of-sight and schedule your free check.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
         <a 
           href="#service-check" 
-          class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold py-4 px-8 rounded-xl shadow-xl transition"
+          class="w-full sm:w-auto bg-infinite-blue hover:bg-infinite-blue-dark text-white font-bold py-4 px-8 rounded-xl shadow-xs transition duration-200 text-lg min-h-[48px] flex items-center justify-center"
+          data-track="final-cta-check"
         >
           Check Address Availability
         </a>
         <a 
-          href="tel:9404370550" 
-          class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition"
+          href="tel:+19404370550" 
+          class="w-full sm:w-auto bg-white hover:bg-slate-100 text-navy-950 font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 shadow-xs transition duration-200 text-lg min-h-[48px]"
+          data-track="final-cta-call"
         >
-          <span>Call Local Support: (940) 437-0550</span>
+          <span>Call: (940) 437-0550</span>
         </a>
       </div>
     </div>

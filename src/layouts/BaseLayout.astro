@@ -33,18 +33,29 @@ const localBusinessSchema = {
       "image": "https://www.infinilinkbroadband.com/assets/hero.jpg",
       "description": "Locally owned and operated Wireless Internet Service Provider (WISP) delivering truly unlimited, high-speed fixed wireless internet to homes and businesses across Wise County, Texas.",
       "telephone": "+1-940-437-0550",
+      "email": "support@infinilinkbroadband.com",
+      "foundingDate": "2017",
+      "founder": {
+        "@type": "Person",
+        "name": "John"
+      },
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Decatur",
+        "streetAddress": "101 Cooper Ct",
+        "addressLocality": "Runaway Bay",
         "addressRegion": "TX",
-        "postalCode": "76234",
+        "postalCode": "76426",
         "addressCountry": "US"
       },
+      "sameAs": [
+        "https://www.facebook.com/infinilinkbroadband",
+        "https://www.google.com/maps/place/Infinilink+Broadband/@33.1709744,-97.8963515,4580m/data=!3m1!1e3!4m6!3m5!1s0x86520cc4281a4471:0x9bec41ac337c3c1a!8m2!3d33.173094!4d-97.8998028!16s%2Fg%2F11c3x99zby?entry=ttu"
+      ],
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "33.2343",
-        "longitude": "-97.5864"
+        "latitude": "33.173094",
+        "longitude": "-97.8998028"
       },
       "areaServed": [
         { "@type": "City", "name": "Decatur" },
@@ -72,7 +83,7 @@ const localBusinessSchema = {
 ---
 
 <!doctype html>
-<html lang="en" class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+<html lang="en" class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,12 +95,8 @@ const localBusinessSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Environment-Aware GSC Safeguards -->
-    {isProduction ? (
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    ) : (
-      <meta name="robots" content="noindex, nofollow" />
-    )}
+    <!-- SEO Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -119,6 +126,7 @@ const localBusinessSchema = {
 
       gtag('config', 'AW-817539024', { 'allow_enhanced_conversions': true });
       gtag('config', 'G-J51Y85KVRZ');
+      gtag('config', 'G-KLNTQYWP97');
 
       // Global conversion tracking helper
       window.trackInfinilinkConversion = function(type, details) {
@@ -158,12 +166,33 @@ const localBusinessSchema = {
             window.trackInfinilinkConversion('call', { phone: phone });
           }
         });
+
+        // Capture UTM params and populate hidden lead_source fields
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var utmSource = params.get('utm_source');
+          var utmCampaign = params.get('utm_campaign');
+          var leadSource = utmSource ? (utmSource + (utmCampaign ? ' / ' + utmCampaign : '')) : 'Direct Website';
+          
+          document.querySelectorAll('form').forEach(function(form) {
+            var input = form.querySelector('input[name="lead_source"]');
+            if (input) {
+              input.value = leadSource;
+            }
+          });
+        } catch (e) {
+          console.warn('Lead tracking error:', e);
+        }
       });
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-950 font-sans text-slate-100">
+  <body class="min-h-screen flex flex-col bg-white font-sans text-slate-900">
+    <!-- Accessible Skip to Main Content Link targeting #main as requested -->
+    <a href="#main" class="skip-link">
+      Skip to main content
+    </a>
     <Navigation />
-    <main class="flex-grow">
+    <main id="main" class="flex-grow">
       <slot />
     </main>
     <Footer />

@@ -4,32 +4,28 @@ import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro
 import PlanComparisonTable from '../components/PlanComparisonTable.astro';
 import VideoAdShowcase from '../components/VideoAdShowcase.astro';
 
-// Dedicated PPC / YouTube Ad Conversion Route
+// Dedicated PPC / Ad Conversion Route
 ---
 
 <BaseLayout 
   title="Special Internet Offer for Wise County Residents | Infinilink Broadband" 
-  description="Exclusive high-speed rural internet offer in Wise County, TX. Fast fixed wireless, zero data caps, low latency, and same-day Decatur support from $50/mo."
+  description="Local internet in Wise County, TX. Fast fixed wireless, zero data caps, steady speeds, and local family support from $40/mo."
 >
   <!-- Hero Section with Focused Ad Headline & Instant Address Check -->
-  <section class="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950">
-    <div class="absolute inset-0 bg-radial from-cyan-900/20 via-transparent to-transparent pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <section class="relative bg-white pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-8">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold uppercase tracking-wider mb-4">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          Exclusive Wise County Ad Offer
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-navy-900 border border-blue-200 text-sm font-bold uppercase tracking-wider mb-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block" aria-hidden="true"></span>
+          Wise County Local Internet
         </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-          Switch to Fast, Reliable <br />
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400">
-            Local Rural Internet
-          </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-navy-950 tracking-tight leading-[1.15]">
+          Your Local Internet Company.<br />
+          <span class="text-infinite-blue">Real Speeds. No Contracts.</span>
         </h1>
-        <p class="mt-4 text-lg text-slate-300">
-          Tired of satellite buffering and high prices? Join hundreds of homes across Decatur, Bridgeport, Runaway Bay, and Wise County enjoying truly unlimited high-speed broadband.
+        <p class="mt-4 text-lg sm:text-xl text-slate-700 font-normal">
+          Fast is nice. Steady is better. Built so video calls don't freeze and movies don't buffer, even at 8 pm. Real speeds, not "up to" speeds.
         </p>
       </div>
 
@@ -37,58 +33,63 @@ import VideoAdShowcase from '../components/VideoAdShowcase.astro';
         
         <!-- Left: Quick Highlights & Trust Badges -->
         <div class="lg:col-span-6 space-y-6">
-          <div class="bg-slate-900/90 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
-            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-              <span>Why Wise County Chooses Infinilink:</span>
+          <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-xs space-y-6">
+            <h2 class="text-2xl font-black text-navy-950">
+              Why Wise County Neighbors Choose Infinilink:
             </h2>
 
             <ul class="space-y-4">
               <li class="flex items-start gap-3.5">
-                <div class="w-6 h-6 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-infinite-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <strong class="text-white">Zero Data Caps & Zero Throttling:</strong>
-                  <p class="text-xs sm:text-sm text-slate-400">Stream 4K, play multiplayer games, and work from home with no limits.</p>
+                  <strong class="text-navy-950 font-bold text-base">Zero Data Caps & Zero Throttling:</strong>
+                  <p class="text-base text-slate-700">Stream TV, join video calls, and connect every device without limits.</p>
                 </div>
               </li>
 
               <li class="flex items-start gap-3.5">
-                <div class="w-6 h-6 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-infinite-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <strong class="text-white">Honest Flat Rates ($50–$110/mo):</strong>
-                  <p class="text-xs sm:text-sm text-slate-400">No surprise equipment rental fees or price hikes after month 12.</p>
+                  <strong class="text-navy-950 font-bold text-base">One Flat Price Every Month ($40–$110/mo):</strong>
+                  <p class="text-base text-slate-700">No surprise equipment rental fees or price hikes. Pay by check, phone, or online.</p>
                 </div>
               </li>
 
               <li class="flex items-start gap-3.5">
-                <div class="w-6 h-6 rounded-full bg-blue-950 border border-blue-500/40 text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-infinite-blue flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <strong class="text-white">Same-Day Local Decatur Tech Dispatch:</strong>
-                  <p class="text-xs sm:text-sm text-slate-400">Local technicians on Wise County roads daily. Speak to neighbors, not call centers.</p>
+                  <strong class="text-navy-950 font-bold text-base">Local Support by Phone or Text:</strong>
+                  <p class="text-base text-slate-700">Call a neighbor, not a chatbot. Most problems solved within the hour.</p>
                 </div>
               </li>
             </ul>
 
-            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <p class="text-xs text-slate-500">Prefer to call?</p>
-                <a href="tel:9404370550" class="text-lg font-black text-cyan-400 hover:text-cyan-300">
+                <p class="text-sm text-slate-600 font-medium">Prefer to speak with someone?</p>
+                <a 
+                  href="tel:+19404370550" 
+                  class="text-xl font-black text-infinite-blue hover:text-infinite-blue-dark" 
+                  aria-label="Call (940) 437-0550"
+                  data-track="special-offer-call"
+                >
                   (940) 437-0550
                 </a>
               </div>
-              <span class="px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 text-xs font-semibold border border-emerald-800">
-                Dispatch Active Today
+              <span class="px-3.5 py-1.5 rounded-full bg-blue-50 text-navy-900 text-sm font-bold border border-blue-200 text-center">
+                Free Line-of-Sight Check
               </span>
             </div>
           </div>
@@ -98,7 +99,7 @@ import VideoAdShowcase from '../components/VideoAdShowcase.astro';
         <div class="lg:col-span-6" id="service-check">
           <ServiceAvailabilityForm 
             title="Check Coverage for Your Property" 
-            subtitle="Enter your Wise County street address to verify immediate line-of-sight tower speeds."
+            subtitle="Enter your Wise County address to verify free line-of-sight signal strength."
           />
         </div>
 
@@ -107,20 +108,22 @@ import VideoAdShowcase from '../components/VideoAdShowcase.astro';
     </div>
   </section>
 
-  <!-- Video Ad Feature -->
+  <!-- Video Showcase Feature -->
   <VideoAdShowcase 
-    title="Watch the 30-Second Commercial"
-    subtitle="Learn why local fixed wireless is the smartest internet upgrade in Wise County."
+    title="Learn How We Deliver Reliable Internet"
+    subtitle="Watch how local fixed wireless beats satellite lag, hidden fees, and corporate phone trees."
   />
 
   <!-- Plan Breakdown -->
-  <section class="py-16">
+  <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl font-black text-white tracking-tight">
+        <h2 class="text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
           Simple, Transparent Pricing Tiers
         </h2>
-        <p class="mt-2 text-slate-400">No annual contracts. Upgrade or change your speed anytime.</p>
+        <p class="mt-2 text-lg text-slate-700 font-normal">
+          One flat price. No contracts. No data caps. No throttling. Same plans and prices for homes and businesses.
+        </p>
       </div>
       <PlanComparisonTable highlightedPlan="plus" />
     </div>

@@ -1,0 +1,159 @@
+---
+// TODO: Story copy pending John's approval.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro';
+
+const teamMembers = [
+  {
+    name: 'John Boyd',
+    role: 'Owner & Founder',
+    bio: 'Wise County resident with background in oil field telecommunications; founded Infinilink to bring real internet home.',
+    imagePlaceholder: 'JB',
+  },
+  {
+    name: '[Parent 1]',
+    role: 'Customer Care & Community Relations',
+    bio: 'Longtime Runaway Bay local dedicated to helping neighbors get set up without tech confusion.',
+    imagePlaceholder: 'P1',
+  },
+  {
+    name: '[Parent 2]',
+    role: 'Billing & Operations',
+    bio: 'Keeping billing straightforward, honest, and easy to pay by phone, check, or online.',
+    imagePlaceholder: 'P2',
+  },
+  {
+    name: '[Installer & Tower Climber]',
+    role: 'Field Service & Tower Technician',
+    bio: 'Ensures rock-solid line-of-sight signal alignment and clean, professional rooftop installations.',
+    imagePlaceholder: 'TC',
+  },
+  {
+    name: '[Cousin, Installation Tech]',
+    role: 'Local Installation Technician',
+    bio: 'On Wise County roads daily configuring indoor Wi-Fi, testing speeds, and making sure everything runs smoothly.',
+    imagePlaceholder: 'IT',
+  },
+];
+---
+
+<BaseLayout 
+  title="About Us | Family-Owned Internet in Wise County, TX" 
+  description="Learn about Infinilink Broadband. Founded in 2017 by John Boyd, our family-owned crew delivers truly unlimited fixed wireless internet across Wise County, Texas."
+>
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-24 bg-white text-slate-900 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold bg-[#EBF4FC] text-[#0060B6] border border-[#0060B6]/30 uppercase tracking-wider mb-4">
+        Our Roots in Wise County
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0B1F3A] tracking-tight leading-tight mb-6">
+        Your Local Internet Company.<br />
+        <span class="text-[#0060B6]">Real People. Real Speeds. No Contracts.</span>
+      </h1>
+      <p class="text-xl text-slate-700 leading-relaxed font-medium">
+        We didn't start Infinilink to become a massive telecom giant. We started it because our own family needed dependable internet right here in Runaway Bay.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-slate-800 text-lg sm:text-xl leading-relaxed">
+      
+      <div class="bg-white border-2 border-slate-200 p-8 sm:p-12 rounded-3xl shadow-sm space-y-6">
+        <h2 class="text-3xl font-black text-[#0B1F3A]">How Infinilink Started</h2>
+        
+        <p>
+          Back in 2016, John's parents were paying $85 every month for a 1.5 Mbps DSL line that barely worked. Websites took minutes to load, streaming movies was out of the question, and working from home was impossible. When the big telephone companies refused to upgrade rural lines, we realized if we wanted reliable internet, we would have to build it ourselves.
+        </p>
+
+        <p>
+          John brought hands-on technical experience from providing critical internet communications to remote oil field rigs in Hobbs, New Mexico—an environment where equipment simply cannot fail. He knew that modern, land-based wireless technology could deliver ultra-fast, steady broadband directly to homes and ranches without needing copper wires or slow satellite dishes.
+        </p>
+
+        <p>
+          Before the first tower even went up, more than 100 neighbors in Runaway Bay pre-signed to support the project. We officially launched in July 2016. Since then, we've grown one connection and one neighbor at a time across Runaway Bay, Bridgeport, Decatur, Alvord, and Paradise.
+        </p>
+
+        <div class="bg-[#EBF4FC] border-l-4 border-[#0060B6] p-6 rounded-r-2xl my-6">
+          <p class="text-slate-900 font-bold text-lg">
+            "Three separate fiber lines feed our network, so if one goes down, you stay online."
+          </p>
+          <p class="text-slate-700 text-base mt-2">
+            Following regional carrier fiber cuts in 2024, we completely re-engineered our backbone with three independent fiber feeds. If one provider experiences a line cut, our network automatically switches over seamlessly to keep your connection live.
+          </p>
+        </div>
+
+        <p>
+          Today, we remain completely family-run and local. We use Infinilink in our own living rooms and home offices every single day. When you call us, you speak with a neighbor who knows Wise County, not an overseas call center or automated robot.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-wider text-[#0060B6]">Local Faces</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0B1F3A] tracking-tight mt-2">
+          Meet the Team Behind Your Connection
+        </h2>
+        <p class="text-slate-600 text-lg mt-3 font-medium">
+          A dedicated local crew committed to treating you with honesty and respect.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-sm hover:border-[#0060B6] transition">
+            <!-- Neutral Avatar Placeholder -->
+            <div class="w-24 h-24 rounded-full bg-[#162E52] text-white flex items-center justify-center font-black text-2xl mb-4 border-4 border-white shadow-md">
+              <span aria-hidden="true">{member.imagePlaceholder}</span>
+              <span class="sr-only">Photo coming soon for {member.name}</span>
+            </div>
+            
+            <h3 class="text-xl font-black text-[#0B1F3A]">{member.name}</h3>
+            <p class="text-sm font-bold text-[#0060B6] uppercase tracking-wider mt-1 mb-3">{member.role}</p>
+            <p class="text-slate-700 text-base leading-relaxed">{member.bio}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Band in Navy -->
+  <section class="py-16 bg-[#0B1F3A] text-white border-t border-[#162E52]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-black text-white">
+        Talk to a Real Person
+      </h2>
+      <p class="text-xl text-slate-200 max-w-2xl mx-auto font-medium">
+        Have questions about speeds, towers, or setup? Give John and the family crew a call. We're right down the road.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a 
+          href="tel:+19404370550" 
+          class="w-full sm:w-auto bg-[#0060B6] hover:bg-[#004D91] text-white font-black text-xl py-4 px-8 rounded-xl shadow-lg transition flex items-center justify-center gap-3 touch-target"
+          data-track="call-about-cta"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          <span>Call (940) 437-0550</span>
+        </a>
+        <a 
+          href="/#service-check" 
+          class="w-full sm:w-auto bg-white hover:bg-slate-100 text-[#0B1F3A] font-bold text-lg py-4 px-8 rounded-xl shadow-md transition touch-target"
+        >
+          Check Address Availability
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

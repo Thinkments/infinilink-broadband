@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Accessibility Statement | Infinilink Broadband" 
+  description="Infinilink Broadband is committed to digital accessibility and meeting WCAG 2.2 Level AA standards for all Wise County residents."
+>
+  <div class="py-16 sm:py-24 bg-white text-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="border-b border-slate-200 pb-8 mb-10">
+        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-bold bg-[#EBF4FC] text-[#0060B6] border border-[#0060B6]/30 uppercase tracking-wider mb-4">
+          Accessibility Commitment
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-black text-[#0B1F3A] tracking-tight mb-4">
+          Accessibility Statement
+        </h1>
+        <p class="text-base text-slate-700 font-medium">
+          Infinilink Broadband is committed to ensuring that our website and digital services are accessible to all people, including seniors, retirees, individuals with disabilities, and users of assistive technologies.
+        </p>
+      </div>
+
+      <div class="space-y-8 text-slate-800 text-lg leading-relaxed">
+        
+        <section class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl space-y-4">
+          <h2 class="text-2xl font-bold text-[#0B1F3A]">Conformance Standard</h2>
+          <p>
+            We strive to adhere strictly to the <strong>Web Content Accessibility Guidelines (WCAG) 2.2 Level AA</strong> published by the World Wide Web Consortium (W3C). These guidelines define how to make web content more accessible for people with diverse auditory, cognitive, neurological, physical, speech, and visual needs.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-bold text-[#0B1F3A]">Key Measures Taken Across Our Site</h2>
+          <ul class="list-disc pl-6 space-y-3">
+            <li>
+              <strong>Light, High-Contrast Design:</strong> Designed with clean white backgrounds, high-contrast dark text, and dark navy headers to meet or exceed the 4.5:1 contrast ratio for standard text and 3:1 for large text and interactive components.
+            </li>
+            <li>
+              <strong>Senior-Friendly Typography:</strong> Built with an 18px base body font size and a strict minimum text size of 14px across all labels, buttons, and disclosures.
+            </li>
+            <li>
+              <strong>Keyboard Navigability:</strong> All navigation menus, links, buttons, and form controls are fully navigable via standard keyboard controls with prominent 3px visible focus rings.
+            </li>
+            <li>
+              <strong>Screen Reader Optimization:</strong> Implemented sequential heading structures (<code class="bg-slate-100 px-2 py-0.5 rounded text-sm text-slate-900">h1</code> through <code class="bg-slate-100 px-2 py-0.5 rounded text-sm text-slate-900">h3</code>), explicit form label bindings, descriptive anchor text, and <code class="bg-slate-100 px-2 py-0.5 rounded text-sm text-slate-900">aria-live</code> status announcements for service coverage checks.
+            </li>
+            <li>
+              <strong>Motion Reduction:</strong> Automatic detection of <code class="bg-slate-100 px-2 py-0.5 rounded text-sm text-slate-900">prefers-reduced-motion</code> settings to eliminate non-essential animations.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Feedback & Direct Contact -->
+        <section class="bg-[#0B1F3A] text-white p-8 rounded-2xl shadow-md space-y-4">
+          <h2 class="text-2xl font-bold text-white">Need Assistance or Have Feedback?</h2>
+          <p class="text-slate-200">
+            If you encounter any difficulty accessing any part of this website, or if you need assistance checking coverage, signing up, or paying your bill, please reach out to our local team directly. We are always happy to help you over the phone or in person.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-3">
+            <div class="bg-[#162E52] p-5 rounded-xl border border-sky-400/40">
+              <p class="text-xs uppercase font-bold text-sky-300 tracking-wider mb-1">Direct Phone Support</p>
+              <a 
+                href="tel:+19404370550" 
+                class="text-2xl font-black text-white hover:text-sky-300 transition"
+                data-track="call-accessibility"
+              >
+                (940) 437-0550
+              </a>
+              <p class="text-sm text-slate-300 mt-1">Speak directly with our local Wise County staff.</p>
+            </div>
+            <div class="bg-[#162E52] p-5 rounded-xl border border-sky-400/40">
+              <p class="text-xs uppercase font-bold text-sky-300 tracking-wider mb-1">Email & Written Assistance</p>
+              <a 
+                href="mailto:support@infinilinkbroadband.com" 
+                class="text-lg font-bold text-white hover:text-sky-300 underline transition break-all"
+              >
+                support@infinilinkbroadband.com
+              </a>
+              <p class="text-sm text-slate-300 mt-1">Or fill out our <a href="/contact" class="text-sky-300 underline font-semibold">online contact form</a>.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</BaseLayout>

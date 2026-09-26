@@ -1,102 +1,154 @@
 ---
+// TODO: Static IP add-on: confirm with John before listing.
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PlanComparisonTable from '../components/PlanComparisonTable.astro';
 import ServiceAvailabilityForm from '../components/ServiceAvailabilityForm.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 
 const businessFaqs = [
   {
-    question: "Do Infinilink business plans come with a Service Level Agreement (SLA)?",
-    answer: "Yes. Our commercial and enterprise point-to-point connections include a 99.9% uptime SLA with dedicated bandwidth guarantees and priority 2-hour dispatch windows."
+    question: "Do businesses pay more?",
+    answer: "No. Businesses get the same plans and prices as homes. We don't believe in charging local shops, offices, or ranches an artificial markup just because you run a business."
   },
   {
-    question: "Can we get static IP addresses for our office servers and VPNs?",
-    answer: "Yes, static IPv4 addresses are available on all commercial packages for remote VPN tunnels, POS systems, security camera servers, and internal databases."
+    question: "Are there long-term contracts for businesses?",
+    answer: "No. All plans are month-to-month. You are never locked into a multi-year contract or hit with cancellation fees."
   },
   {
-    question: "Can Infinilink connect multiple ranch buildings or industrial yards?",
-    answer: "Absolutely. We specialize in point-to-multipoint wireless relays that link headquarters, barns, fabrication shops, and entry gates onto one unified high-speed network."
+    question: "How fast can you help if our business internet has an issue?",
+    answer: "Most problems are solved within the hour, by phone or text. Because we live and work right here in Wise County, you talk directly with our local crew, not a faraway support queue."
   },
   {
-    question: "What is the typical turnaround for commercial site surveys?",
-    answer: "Our Decatur-based commercial engineering team can perform a physical or remote elevation/line-of-sight analysis within 24 to 48 hours."
+    question: "Can Infinilink connect multiple ranch buildings, workshops, or barns?",
+    answer: "Yes! We can set up point-to-point wireless bridges between your main office, workshop, barn, or guest quarters without trenching wires. Request a quote and we'll evaluate your property."
   }
 ];
 ---
 
 <BaseLayout 
-  title="Commercial & Dedicated Business Internet | Wise County TX" 
-  description="High-throughput, low-latency commercial fixed wireless internet for businesses, ranches, and industrial facilities in Wise County, Texas. 99.9% SLA & static IPs."
+  title="Local Business Internet for Wise County | Same Honest Pricing" 
+  description="Business internet without the business markup. Same plans, same prices, same local crew. No contracts across Decatur, Runaway Bay, Bridgeport, and Wise County."
 >
-  <div class="py-16 sm:py-24 bg-slate-950">
+  <div class="py-16 sm:py-24 bg-white text-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Hero -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-950 text-cyan-400 border border-blue-800 uppercase tracking-wider mb-4">
-          Enterprise & Agribusiness Connectivity
+      <!-- Page Hero -->
+      <div class="text-center max-w-4xl mx-auto mb-16">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold bg-[#EBF4FC] text-[#0060B6] border border-[#0060B6]/30 uppercase tracking-wider mb-4">
+          Fair Business Internet
         </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
-          Dedicated Commercial Wireless Internet for Wise County
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0B1F3A] tracking-tight mb-4">
+          Local Business Internet for Wise County, Same Honest Pricing
         </h1>
-        <p class="text-lg text-slate-300">
-          Power your company, ranch operations, medical clinic, or retail storefront with rock-solid, low-latency broadband backed by guaranteed SLAs and local priority response.
+        <p class="text-xl sm:text-2xl text-slate-700 font-medium max-w-3xl mx-auto leading-relaxed">
+          Business internet without the business markup. Same plans, same prices, same local crew. No contracts.
         </p>
       </div>
 
-      <!-- Feature Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      <!-- 4 Core Business Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-20">
         
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-blue-950 text-cyan-400 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        <div class="bg-slate-50 border-2 border-slate-200 p-8 rounded-2xl space-y-3 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#EBF4FC] text-[#0060B6] flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">99.9% Uptime Guarantee</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Mission-critical point-to-point wireless links engineered with redundant tower feeds to keep your operations online through busy workweeks and severe weather.
+          <h2 class="text-xl font-black text-[#0B1F3A]">No Data Caps or Throttling</h2>
+          <p class="text-base text-slate-700 font-medium leading-relaxed">
+            Run point-of-sale systems, upload bookkeeping files, process card payments, and stream background music without ever worrying about overage charges.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-cyan-950 text-cyan-400 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+        <div class="bg-slate-50 border-2 border-slate-200 p-8 rounded-2xl space-y-3 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#EBF4FC] text-[#0060B6] flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">Static IPs & Symmetrical Options</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Host local servers, connect multi-site SD-WAN networks, maintain reliable VPN connections, and upload large design CAD or video assets with high upload speeds.
+          <h2 class="text-xl font-black text-[#0B1F3A]">No Contracts</h2>
+          <p class="text-base text-slate-700 font-medium leading-relaxed">
+            Every business plan is month-to-month. We earn your business every 30 days. No long-term lock-in, no termination penalties, and no hidden fine print.
           </p>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4">
-          <div class="w-12 h-12 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        <div class="bg-slate-50 border-2 border-slate-200 p-8 rounded-2xl space-y-3 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-[#EBF4FC] text-[#0060B6] flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-white">Multi-Building Ranch Relays</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Extend connectivity from your main commercial entrance across barns, equipment sheds, guest quarters, and gate cameras using licensed wireless point-to-point relays.
+          <h2 class="text-xl font-black text-[#0B1F3A]">Local Support: Real People</h2>
+          <p class="text-base text-slate-700 font-medium leading-relaxed">
+            Real people answer your call or text. Most problems are solved within the hour, by phone or text. If an on-site visit is needed, we are right down the road.
           </p>
+        </div>
+
+        <div class="bg-[#0B1F3A] text-white p-8 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded bg-[#162E52] text-sky-300 text-xs font-bold uppercase tracking-wider mb-2">Request a Quote</span>
+            <h2 class="text-xl font-black text-white">Barns, Shops & Outbuildings</h2>
+            <p class="text-sm text-slate-200 font-normal leading-relaxed mt-2">
+              Need internet in your detached workshop, barn, storage facility, or separate guest house? Ask us about connecting multiple buildings on your property.
+            </p>
+          </div>
+          <div class="pt-4">
+            <a 
+              href="/contact?plan=multi-building" 
+              class="inline-block w-full text-center bg-white hover:bg-slate-100 text-[#0B1F3A] font-bold text-sm py-2.5 px-4 rounded-xl transition touch-target"
+            >
+              Request a Custom Quote →
+            </a>
+          </div>
         </div>
 
       </div>
 
-      <!-- Form Section -->
+      <!-- Business Plans Grid -->
+      <section class="mb-20" aria-labelledby="business-plans-heading">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 id="business-plans-heading" class="text-3xl sm:text-4xl font-black text-[#0B1F3A]">
+            Transparent Pricing for Wise County Businesses
+          </h2>
+          <p class="text-slate-600 text-lg mt-2 font-medium">
+            Same flat rates whether you're connecting a family home, retail storefront, or ranch office.
+          </p>
+        </div>
+        <PlanComparisonTable highlightedPlan="plus" showCommercialQuote={false} />
+      </section>
+
+      <!-- Network Track Record Callout -->
+      <div class="bg-[#0B1F3A] text-white p-8 sm:p-10 rounded-3xl mb-20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-sky-300 font-bold text-sm uppercase tracking-wider">Independent Live Verification</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">100% Uptime Over the Last 90 Days</h2>
+          <p class="text-slate-200 text-base max-w-2xl font-medium">
+            Three separate fiber lines feed our network, so if one provider has a line cut, your business stays online. Check our live status anytime.
+          </p>
+        </div>
+        <a 
+          href="https://status.infinilinkbroadband.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="bg-[#0060B6] hover:bg-[#004D91] text-white font-bold text-base px-6 py-3.5 rounded-xl transition shrink-0 touch-target border border-sky-400/40 shadow-sm"
+        >
+          View Live Status Page →
+        </a>
+      </div>
+
+      <!-- Lead Capture Form -->
       <div class="max-w-3xl mx-auto mb-20" id="business-check">
         <ServiceAvailabilityForm 
-          title="Request a Commercial Site Assessment"
-          subtitle="Tell us about your facility location and throughput requirements. Our commercial network engineer will contact you directly."
+          title="Check Business Address Availability"
+          subtitle="Enter your location below. Our local crew will perform a free line-of-sight check."
         />
       </div>
 
       <!-- Commercial FAQs -->
       <FAQAccordion 
         faqs={businessFaqs} 
-        title="Commercial Internet FAQs" 
-        subtitle="Common questions from Wise County business owners and ranch managers."
+        title="Wise County Business Internet FAQs" 
+        subtitle="Clear answers for local business owners and ranch managers."
       />
 
     </div>

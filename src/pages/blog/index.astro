@@ -10,32 +10,32 @@ const categories = ['All Guides', 'Rural Internet Guides', 'Tech & Speeds', 'Com
 ---
 
 <BaseLayout 
-  title="Rural Internet Guides, Wi-Fi Tech & Wise County Updates" 
-  description="Explore technical broadband guides, fixed wireless performance tutorials, and local Wise County connectivity news from Infinilink's engineering team."
+  title="Rural Internet Guides & Wise County Updates | Infinilink Broadband" 
+  description="Explore broadband guides, fixed wireless tutorials, and local Wise County connectivity news from Infinilink's local team."
 >
-  <div class="py-16 sm:py-24 bg-slate-950">
+  <div class="py-16 sm:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase tracking-wider mb-4">
-          Infinilink Tech Journal & E-E-A-T Repository
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold bg-blue-50 text-navy-900 border border-blue-200 uppercase tracking-wider mb-4">
+          Infinilink Community Guides
         </span>
-        <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4">
-          Wise County Broadband Guides & Insights
+        <h1 class="text-4xl sm:text-5xl font-black text-navy-950 tracking-tight mb-4">
+          Wise County Broadband Guides & News
         </h1>
-        <p class="text-lg text-slate-300">
-          Practical advice from local RF engineers and network technicians on optimizing rural Wi-Fi, comparing broadband tech, and staying connected in North Texas.
+        <p class="text-lg sm:text-xl text-slate-700 font-normal">
+          Helpful advice from our local family team on optimizing home Wi-Fi, understanding fixed wireless, and staying connected across North Texas.
         </p>
       </div>
 
       <!-- Category Filter Pills -->
       <div class="flex flex-wrap justify-center gap-2 mb-12">
         {categories.map((cat, idx) => (
-          <span class={`text-xs font-semibold px-4 py-2 rounded-full cursor-default ${
+          <span class={`text-sm font-bold px-4 py-2 rounded-full cursor-default ${
             idx === 0 
-              ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-md' 
-              : 'bg-slate-900 text-slate-400 border border-slate-800'
+              ? 'bg-navy-900 text-white shadow-xs' 
+              : 'bg-slate-50 text-navy-950 border border-slate-200 shadow-2xs font-semibold'
           }`}>
             {cat}
           </span>
@@ -52,41 +52,41 @@ const categories = ['All Guides', 'Rural Internet Guides', 'Tech & Speeds', 'Com
           const postSlug = post.id;
 
           return (
-            <article class="bg-slate-900/80 rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition duration-300 flex flex-col group shadow-xl">
-              <a href={`/blog/${postSlug}`} class="block relative aspect-video overflow-hidden bg-slate-950">
+            <article class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-infinite-blue transition duration-200 flex flex-col group shadow-xs hover:shadow-md">
+              <a href={`/blog/${postSlug}`} class="block relative aspect-video overflow-hidden bg-slate-100">
                 <img 
                   src={heroSrc} 
                   alt={post.data.altText || post.data.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300" 
                   loading="lazy"
                 />
-                <div class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-slate-800 text-cyan-400 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">
+                <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-slate-200 text-navy-950 text-xs font-bold px-3 py-1 rounded-md uppercase shadow-xs">
                   {post.data.category}
                 </div>
               </a>
 
               <div class="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <div class="text-xs text-slate-400 mb-2">
+                  <div class="text-sm text-slate-600 font-medium mb-2">
                     {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })} • {post.data.author}
                   </div>
-                  <h2 class="text-xl font-bold text-white group-hover:text-cyan-400 transition mb-3 leading-snug">
+                  <h2 class="text-xl font-bold text-navy-950 group-hover:text-infinite-blue transition mb-3 leading-snug">
                     <a href={`/blog/${postSlug}`}>
                       {post.data.title}
                     </a>
                   </h2>
-                  <p class="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p class="text-slate-700 text-base leading-relaxed mb-4 line-clamp-3 font-normal">
                     {post.data.description}
                   </p>
                 </div>
 
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
                   <a 
                     href={`/blog/${postSlug}`} 
-                    class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group/btn"
+                    class="text-sm font-bold text-infinite-blue hover:text-infinite-blue-dark flex items-center gap-1 group/btn"
                   >
                     <span>Read Full Guide</span>
-                    <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 text-infinite-blue group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                   </a>
